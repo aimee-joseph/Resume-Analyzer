@@ -108,18 +108,3 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
                 st.info("No missing skills.")
     except Exception as e:
         st.error(str(e))
-
-# if analyze_button:
-#     if uploaded_resume is None:
-#         st.warning("⚠️ Please upload a resume.")
-#     elif job_description.strip() == "":
-#         st.warning("⚠️ Please paste a job description.")
-#     else:
-#         try:
-#             resume_text = extract_text_from_resume(uploaded_resume)
-#             st.success("✅ Resume uploaded and text extracted successfully!")
-#             with st.expander("Preview extracted resume text"):
-#                 st.text(resume_text[:3000])
-#         except Exception as e:
-#             st.error(str(e))
-#         #st.success("✅ Inputs have been received successfuly! Click 'Analyse my resume' to begin analysis.")
