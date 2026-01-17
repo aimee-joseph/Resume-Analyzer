@@ -14,9 +14,9 @@ def match_skills(resume_skills: Set[str], jd_skills: Set[str]) -> Dict[str, obje
 def evaluate_experience(user_level: str, jd_text: str) -> str:
     jd_text = jd_text.lower()
 
-    if "3+ years" in jd_text or "senior" in jd_text:
+    if "3+ years" in jd_text or "5+ years" in jd_text or "senior" in jd_text:
         required_level = "3+ Years"
-    elif "1 - 3 years" in jd_text or "2 years" in jd_text:
+    elif "1-3 years" in jd_text or "1 - 3 years" in jd_text or "2 years" in jd_text:
         required_level = "1 - 3 Years"
     else:
         required_level = "Fresher"
