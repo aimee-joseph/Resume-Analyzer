@@ -3,7 +3,7 @@ from pathlib import Path
 from utils.resume_parser import extract_text_from_resume
 from utils.text_cleaner import clean_text
 from utils.skill_extractor import load_skills, extract_skills
-from utils.matcher import match_skills, evaluate_experience
+from utils.matcher import match_skills
 
 st.set_page_config(page_title = "Resume Analyzer", page_icon = "📜", layout = "wide")
 
