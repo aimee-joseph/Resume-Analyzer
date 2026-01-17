@@ -109,7 +109,7 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
     except Exception as e:
         st.error(str(e))
 
-st.markdown("---")
-st.subheader("🧠 Experience Fit Assessment")
-experience_feedback = evaluate_experience(experience_level, job_description)
-st.info(experience_feedback)
+    st.markdown("---")
+    st.subheader("🧠 Experience Fit Assessment")
+    experience_feedback = evaluate_experience(experience_level, job_description)
+    st.info(experience_feedback)
