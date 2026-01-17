@@ -103,7 +103,7 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
         with col2:
             st.subheader("❌ Missing Skills")
             if results["missing_skills"]:
-                st.table(sorted(results["missing_skills"]))
+                st.table(sorted(results["missing_skills"]), border = True)
             else:
                 st.info("No missing skills.")
     except Exception as e:
