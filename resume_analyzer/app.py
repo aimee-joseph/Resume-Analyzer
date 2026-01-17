@@ -3,7 +3,7 @@ from pathlib import Path
 from utils.resume_parser import extract_text_from_resume
 from utils.text_cleaner import clean_text
 from utils.skill_extractor import load_skills, extract_skills
-from utils.matcher import match_skills
+from utils.matcher import match_skills, evaluate_experience
 
 st.set_page_config(page_title = "Resume Analyzer", page_icon = "📜", layout = "wide")
 
@@ -108,3 +108,9 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
                 st.info("No missing skills.")
     except Exception as e:
         st.error(str(e))
+
+        st.markdown("---")
+        st.subheader("🧠 Experience Fit Assessment")
+
+        experience_feedback = evaluate_experience(experience_level, job_description)
+        st.info(experience_feedback)
