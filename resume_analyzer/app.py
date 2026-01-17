@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 from utils.resume_parser import extract_text_from_resume
 from utils.text_cleaner import clean_text
 from utils.skill_extractor import load_skills, extract_skills
@@ -74,7 +75,10 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
         clean_resume_text = clean_text(resume_text)
         clean_jd_text = clean_text(job_description)
 
-        skills_db = load_skills("data/skills_list.txt")
+        BASE_DIR = Path(__file__).resolve().parent
+        SKILLS_PATH = BASE_DIR / "data" / "skills_list.txt"
+
+        skills_db = load_skills(SKILLS_PATH)
 
         resume_skills = extract_skills(clean_resume_text, skills_db)
         jd_skills = extract_skills(clean_jd_text, skills_db)
