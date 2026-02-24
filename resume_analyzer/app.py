@@ -16,7 +16,7 @@ message_placeholder = st.empty()
 st.sidebar.header("Input Details")
 uploaded_resume = st.sidebar.file_uploader("Upload your resume (PDF format)", type = ["pdf"])
 job_description = st.sidebar.text_area("Paste the job description ...", height = 200)
-target_role = st.sidebar.selectbox("Select the target role", ["Software Engineer", "Data Analyst", "ML Engineer", "Web Developer"])
+# target_role = st.sidebar.selectbox("Select the target role", ["Software Engineer", "Data Analyst", "ML Engineer", "Web Developer"])
 experience_level = st.sidebar.radio("Experience level: ", ["Fresher", "1 - 3 Years", "3+ Years"])
 analyze_button = st.sidebar.button("Analyze my resume")
 
