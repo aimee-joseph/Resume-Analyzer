@@ -34,29 +34,29 @@ message_text = None
 if not analyze_button:
     if not resume_uploaded and not jd_provided:
         message_type = "info"
-        message_text = "📌 Please upload your resume and paste the job description to begin."
+        message_text = "Please upload your resume and paste the job description to begin."
     elif resume_uploaded and not jd_provided:
         message_type = "warning"
-        message_text = "⚠️ Resume uploaded. Please paste a job description."
+        message_text = "Resume uploaded. Please paste a job description."
     elif not resume_uploaded and jd_provided:
         message_type = "warning"
-        message_text = "⚠️ Job description provided. Please upload a resume."
+        message_text = "Job description provided. Please upload a resume."
 else:
     if not resume_uploaded and not jd_provided:
         message_type = "warning"
-        message_text = "⚠️ Please upload your resume and paste the job description."
+        message_text = "Please upload your resume and paste the job description."
     elif resume_uploaded and not jd_provided:
         message_type = "warning"
-        message_text = "⚠️ Resume uploaded. Please paste a job description."
+        message_text = "Resume uploaded. Please paste a job description."
     elif resume_uploaded and invalid_file:
         message_type = "error"
-        message_text = "❌ Invalid file type. Please upload your resume in PDF format only."
+        message_text = "Invalid file type. Please upload your resume in PDF format only."
     elif not resume_uploaded and jd_provided:
         message_type = "warning"
-        message_text = "⚠️ Job description provided. Please upload a resume."
+        message_text = "Job description provided. Please upload a resume."
     else:
         message_type = "success"
-        message_text = "✅ Resume and job description received successfully!"
+        message_text = "Resume and job description received successfully!"
 
 if message_type == "info":
     message_placeholder.info(message_text)
@@ -86,7 +86,7 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
         results = match_skills(resume_skills, jd_skills)
 
         st.markdown("---")
-        st.success("✅ Analysis completed successfully!")
+        st.success("Analysis completed successfully!")
 
         st.metric(label = "Resume Match %", value = f"{results["match_percentage"]}%")
         st.progress(results["match_percentage"]/100)
@@ -94,14 +94,14 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
         col1, col2 = st.columns(2)
 
         with col1:
-            st.subheader("✅ Matched Skills")
+            st.subheader("Matched Skills")
             if results["matched_skills"]:
                 st.table(sorted(results["matched_skills"]))
             else:
                 st.info("No matching skills found.")
 
         with col2:
-            st.subheader("❌ Missing Skills")
+            st.subheader("Missing Skills")
             if results["missing_skills"]:
                 st.table(sorted(results["missing_skills"]))
             else:
@@ -110,6 +110,6 @@ if analyze_button and resume_uploaded and jd_provided and not invalid_file:
         st.error(str(e))
 
     st.markdown("---")
-    st.subheader("🧠 Experience Fit Assessment")
+    st.subheader("Experience Fit Assessment")
     experience_feedback = evaluate_experience(experience_level, job_description)
     st.info(experience_feedback)

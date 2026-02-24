@@ -22,12 +22,12 @@ def evaluate_experience(user_level: str, jd_text: str) -> str:
         required_level = "Fresher"
     
     if user_level == required_level:
-        return "✅ Your experience level aligns well with this role."
+        return "Your experience level aligns well with this role."
     
     if user_level == "Fresher" and required_level != "Fresher":
-        return "⚠️ This role seems to require prior experience. Consider gaining more hands-on experience before applying."
+        return "This role seems to require prior experience. Consider gaining more hands-on experience before applying."
 
     if user_level == "1 - 3 Years" and required_level == "3+ Years":
-        return "⚠️ This seems to be a senior-level role. Consider strengthening your profile with advanced projects as well as professional experience."
+        return "This seems to be a senior-level role. Consider strengthening your profile with advanced projects as well as professional experience."
     
-    return "ℹ️ Your experience level is acceptable, but reviewing the requirements carefully is recommended."
+    return "Your experience level is acceptable, but reviewing the requirements carefully is recommended."
