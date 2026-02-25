@@ -7,7 +7,7 @@ from utils.matcher import match_skills, evaluate_experience
 
 st.set_page_config(page_title = "Resume Analyzer", page_icon = "📜", layout = "wide")
 
-st.title("📄 Resume Analyzer and Job Matcher Tool")
+st.title("Resume Analyzer and Job Matcher Tool")
 st.subheader("Check how well your resume matches a job description.")
 st.markdown("---")
 
@@ -70,7 +70,7 @@ elif message_type == "success":
 if analyze_button and resume_uploaded and jd_provided and not invalid_file:
     try:
         resume_text = extract_text_from_resume(uploaded_resume)
-        # with st.expander("📄 Preview extracted resume text"):
+        # with st.expander("Preview extracted resume text"):
         #     st.text(resume_text[:3000])
         clean_resume_text = clean_text(resume_text)
         clean_jd_text = clean_text(job_description)
